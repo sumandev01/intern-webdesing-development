@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex items-center justify-center p-4 sm:p-8 font-sans">
 
   <div class="w-full max-w-5xl mx-auto">
     <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-      
+
       <!-- Header Section -->
       <div class="text-center max-w-2xl mx-auto mb-10">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium mb-3">
@@ -27,10 +29,10 @@
 
       <!-- Main Layout Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         <!-- Left: Direct Channels -->
         <div class="lg:col-span-5 space-y-4">
-          
+
           <!-- Email Card -->
           <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50">
             <h4 class="text-sm font-semibold text-white">Email Address</h4>
@@ -53,7 +55,7 @@
 
         <!-- Right: Contact Form -->
         <div class="lg:col-span-7 bg-slate-950/70 border border-slate-800 p-6 sm:p-8 rounded-xl shadow-inner">
-          
+
           <!-- Success Notification -->
           <div id="successBox" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
             <p class="font-semibold text-sm">✓ Thank you! Your message has been sent successfully.</p>
@@ -63,21 +65,20 @@
 
           <!-- Main Form -->
           <form id="contactForm" novalidate onsubmit="handleSubmit(event)" class="space-y-4">
-            
+
             <!-- Full Name -->
             <div>
               <label for="fullName" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
                 Full Name <span class="text-rose-500">*</span>
               </label>
-              <input 
-                type="text" 
-                id="fullName" 
-                name="fullName" 
-                required 
-                placeholder="e.g. Suman Chandra Sharma" 
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                placeholder="e.g. Suman Chandra Sharma"
                 class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
-                oninput="clearError('fullName')"
-              />
+                oninput="clearError('fullName')" />
               <p id="error-fullName" class="hidden text-xs text-rose-400 mt-1"></p>
             </div>
 
@@ -87,15 +88,14 @@
                 <label for="email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
                   Email Address <span class="text-rose-500">*</span>
                 </label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  required 
-                  placeholder="name@example.com" 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
                   class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
-                  oninput="clearError('email')"
-                />
+                  oninput="clearError('email')" />
                 <p id="error-email" class="hidden text-xs text-rose-400 mt-1"></p>
               </div>
 
@@ -103,15 +103,14 @@
                 <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
                   Phone Number <span class="text-rose-500">*</span>
                 </label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  required 
-                  placeholder="+880 1700-000000" 
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="+880 1700-000000"
                   class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
-                  oninput="clearError('phone')"
-                />
+                  oninput="clearError('phone')" />
                 <p id="error-phone" class="hidden text-xs text-rose-400 mt-1"></p>
               </div>
             </div>
@@ -121,24 +120,22 @@
               <label for="message" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
                 Your Message / Project Scope <span class="text-rose-500">*</span>
               </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
-                required 
-                placeholder="Briefly describe your project requirements, goals, or timeline..." 
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Briefly describe your project requirements, goals, or timeline..."
                 class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none leading-relaxed"
-                oninput="clearError('message')"
-              ></textarea>
+                oninput="clearError('message')"></textarea>
               <p id="error-message" class="hidden text-xs text-rose-400 mt-1"></p>
             </div>
 
             <!-- Submit Button -->
-            <button 
-              type="submit" 
-              id="submitBtn" 
-              class="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-indigo-600/30 cursor-pointer"
-            >
+            <button
+              type="submit"
+              id="submitBtn"
+              class="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-indigo-600/30 cursor-pointer">
               Send Message
             </button>
 
@@ -214,24 +211,36 @@
         isValid = false;
       }
 
+      // if (isValid) {
+      //   const btn = document.getElementById('submitBtn');
+      //   btn.disabled = true;
+      //   btn.innerText = 'Sending Message...';
+
+      //   setTimeout(() => {
+      //     btn.disabled = false;
+      //     btn.innerText = 'Send Message';
+
+      //     const successBox = document.getElementById('successBox');
+      //     const leadSummary = document.getElementById('leadSummary');
+      //     leadSummary.innerHTML = `<strong>Lead Captured:</strong> Name: ${nameVal} | Phone: ${phoneVal} | Email: ${emailVal}`;
+      //     successBox.classList.remove('hidden');
+
+      //     document.getElementById('contactForm').reset();
+      //   }, 500);
+      // }
+
       if (isValid) {
         const btn = document.getElementById('submitBtn');
         btn.disabled = true;
         btn.innerText = 'Sending Message...';
 
+        // Simulate a brief delay before redirecting to the thank-you page
         setTimeout(() => {
-          btn.disabled = false;
-          btn.innerText = 'Send Message';
-
-          const successBox = document.getElementById('successBox');
-          const leadSummary = document.getElementById('leadSummary');
-          leadSummary.innerHTML = `<strong>Lead Captured:</strong> Name: ${nameVal} | Phone: ${phoneVal} | Email: ${emailVal}`;
-          successBox.classList.remove('hidden');
-
-          document.getElementById('contactForm').reset();
-        }, 500);
+          window.location.href = 'thank-you.html';
+        }, 600);
       }
     }
   </script>
 </body>
+
 </html>
