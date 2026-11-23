@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Local Reports & Audits
+report/
+
+# System files
+.DS_Store
+Thumbs.db

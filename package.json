@@ -1,0 +1,23 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumandev01/intern-webdesing-development.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumandev01/intern-webdesing-development/issues"
+  },
+  "homepage": "https://github.com/sumandev01/intern-webdesing-development#readme",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

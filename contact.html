@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biswas IT Firm - Contact Us</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="tailwind.css">
 </head>
 
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex items-center justify-center p-4 sm:p-8 font-sans">
@@ -210,24 +209,6 @@
         showError('message', 'Please enter your message (at least 10 characters).');
         isValid = false;
       }
-
-      // if (isValid) {
-      //   const btn = document.getElementById('submitBtn');
-      //   btn.disabled = true;
-      //   btn.innerText = 'Sending Message...';
-
-      //   setTimeout(() => {
-      //     btn.disabled = false;
-      //     btn.innerText = 'Send Message';
-
-      //     const successBox = document.getElementById('successBox');
-      //     const leadSummary = document.getElementById('leadSummary');
-      //     leadSummary.innerHTML = `<strong>Lead Captured:</strong> Name: ${nameVal} | Phone: ${phoneVal} | Email: ${emailVal}`;
-      //     successBox.classList.remove('hidden');
-
-      //     document.getElementById('contactForm').reset();
-      //   }, 500);
-      // }
 
       if (isValid) {
         const btn = document.getElementById('submitBtn');
