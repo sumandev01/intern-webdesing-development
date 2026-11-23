@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biswas IT Firm - Contact Us</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex items-center justify-center p-4 sm:p-8 font-sans">
+
+  <div class="w-full max-w-5xl mx-auto">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      
+      <!-- Header Section -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium mb-3">
+          <span>Biswas IT Firm</span> • <span>Contact Us</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Let's Start a Conversation
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-2">
+          Have a project in mind, need technical consultation, or want to explore our digital solutions? Send us a message and our team will get in touch shortly.
+        </p>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Direct Channels -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50">
+            <h4 class="text-sm font-semibold text-white">Email Address</h4>
+            <p class="text-xs text-slate-300 mt-1">contact@biswasitfirm.com</p>
+            <span class="text-[11px] text-slate-400 block mt-1">For proposals and official inquiries</span>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50">
+            <h4 class="text-sm font-semibold text-white">Phone & WhatsApp</h4>
+            <p class="text-xs text-slate-300 mt-1">+880 1700-000000</p>
+            <span class="text-[11px] text-slate-400 block mt-1">Available for direct inquiries</span>
+          </div>
+
+          <!-- Response Commitment -->
+          <div class="p-4 rounded-xl bg-indigo-950/30 border border-indigo-800/30 text-xs text-slate-300">
+            <strong class="text-indigo-400">⚡ Fast Turnaround:</strong> We typically review and respond to all client inquiries within 1–2 business hours.
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-7 bg-slate-950/70 border border-slate-800 p-6 sm:p-8 rounded-xl shadow-inner">
+          
+          <!-- Success Notification -->
+          <div id="successBox" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+            <p class="font-semibold text-sm">✓ Thank you! Your message has been sent successfully.</p>
+            <p class="text-xs text-slate-300 mt-1">Our team will review your inquiry and get in touch with you shortly.</p>
+            <div id="leadSummary" class="text-xs text-slate-300 mt-2 font-mono bg-slate-900 p-2 rounded border border-slate-700"></div>
+          </div>
+
+          <!-- Main Form -->
+          <form id="contactForm" novalidate onsubmit="handleSubmit(event)" class="space-y-4">
+            
+            <!-- Full Name -->
+            <div>
+              <label for="fullName" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
+                Full Name <span class="text-rose-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                required 
+                placeholder="e.g. Suman Chandra Sharma" 
+                class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                oninput="clearError('fullName')"
+              />
+              <p id="error-fullName" class="hidden text-xs text-rose-400 mt-1"></p>
+            </div>
+
+            <!-- Email & Phone Dual Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
+                  Email Address <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="name@example.com" 
+                  class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                  oninput="clearError('email')"
+                />
+                <p id="error-email" class="hidden text-xs text-rose-400 mt-1"></p>
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
+                  Phone Number <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required 
+                  placeholder="+880 1700-000000" 
+                  class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                  oninput="clearError('phone')"
+                />
+                <p id="error-phone" class="hidden text-xs text-rose-400 mt-1"></p>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-300 uppercase mb-1">
+                Your Message / Project Scope <span class="text-rose-500">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Briefly describe your project requirements, goals, or timeline..." 
+                class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none leading-relaxed"
+                oninput="clearError('message')"
+              ></textarea>
+              <p id="error-message" class="hidden text-xs text-rose-400 mt-1"></p>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              id="submitBtn" 
+              class="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-lg text-sm transition-all shadow-lg shadow-indigo-600/30 cursor-pointer"
+            >
+              Send Message
+            </button>
+
+            <p class="text-[11px] text-slate-500 text-center mt-2">
+              🔒 Your privacy is strictly protected. No spam.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Validation Logic -->
+  <script>
+    function clearError(fieldId) {
+      const errEl = document.getElementById('error-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) errEl.classList.add('hidden');
+      if (inputEl) {
+        inputEl.classList.remove('border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500');
+        inputEl.classList.add('border-slate-700', 'focus:border-indigo-500');
+      }
+    }
+
+    function showError(fieldId, message) {
+      const errEl = document.getElementById('error-' + fieldId);
+      const inputEl = document.getElementById(fieldId);
+      if (errEl) {
+        errEl.innerText = '⚠️ ' + message;
+        errEl.classList.remove('hidden');
+      }
+      if (inputEl) {
+        inputEl.classList.add('border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500');
+        inputEl.classList.remove('border-slate-700', 'focus:border-indigo-500');
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const nameVal = document.getElementById('fullName').value.trim();
+      const emailVal = document.getElementById('email').value.trim();
+      const phoneVal = document.getElementById('phone').value.trim();
+      const msgVal = document.getElementById('message').value.trim();
+
+      // 1. Name Check (Min 2 chars)
+      if (!nameVal || nameVal.length < 2) {
+        showError('fullName', 'Please enter your full name (minimum 2 characters).');
+        isValid = false;
+      }
+
+      // 2. Email Check (RegEx)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailVal || !emailRegex.test(emailVal)) {
+        showError('email', 'Please enter a valid email address (e.g. name@example.com).');
+        isValid = false;
+      }
+
+      // 3. Phone Check (Min 10-11 digits)
+      const phoneClean = phoneVal.replace(/[^0-9+]/g, '');
+      if (!phoneVal || phoneClean.length < 10) {
+        showError('phone', 'Please enter a valid phone number (at least 10–11 digits).');
+        isValid = false;
+      }
+
+      // 4. Message Check (Min 10 chars)
+      if (!msgVal || msgVal.length < 10) {
+        showError('message', 'Please enter your message (at least 10 characters).');
+        isValid = false;
+      }
+
+      if (isValid) {
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = 'Sending Message...';
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerText = 'Send Message';
+
+          const successBox = document.getElementById('successBox');
+          const leadSummary = document.getElementById('leadSummary');
+          leadSummary.innerHTML = `<strong>Lead Captured:</strong> Name: ${nameVal} | Phone: ${phoneVal} | Email: ${emailVal}`;
+          successBox.classList.remove('hidden');
+
+          document.getElementById('contactForm').reset();
+        }, 500);
+      }
+    }
+  </script>
+</body>
+</html>
